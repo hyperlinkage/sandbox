@@ -1,0 +1,117 @@
+<!doctype html>
+
+<html lang="en-GB">
+
+<head>
+
+<title>Table Background Fix - Hyperlinkage</title>
+	
+<meta charset="utf-8" />
+
+<style type="text/css">
+
+*
+{
+	font-family: sans-serif;
+}
+
+table
+{
+	width: 500px;
+	border-collapse: collapse;
+}
+
+th, td
+{
+	text-align: center;
+}
+
+thead
+{
+	background-image: url(gradient.jpg);
+}
+
+tfoot
+{
+	background-image: url(gradient.jpg);
+	background-position: left bottom;
+}
+
+</style>
+
+<script type="text/javascript" src="jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="jquery.fixTableBackground.js"></script>
+<script type="text/javascript">
+
+function fixTableBackground()
+{
+	$("thead").fixTableBackground();
+	
+	// If the image is bottom aligned the image height must be provided
+	$("tfoot").fixTableBackground(200);
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h1>Table Background Fix</h1>
+
+<p>
+In most browsers the table below will have rounded corners and a linear gradient behind the header and footer.  However, in Chrome and Safari the background image is broken up into the individual table cells.
+</p>
+
+<p>
+<input type="button" onclick="fixTableBackground()" value="Fix it" />
+</p>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Name</th>
+<th>Price</th>
+</tr>
+
+</thead>
+
+<tr>
+<td>Widget</td>
+<td>&pound;2.50</td>
+</tr>
+
+<tr>
+<td>Gadget</td>
+<td>&pound;3.00</td>
+</tr>
+
+<tfoot>
+
+<tr>
+<td>Subtotal</td>
+<td>&pound;5.50</td>
+</tr>
+
+<tr>
+<td>Delivery</td>
+<td>&pound;0.50</td>
+</tr>
+
+<tr>
+<td>Total</td>
+<td>&pound;6.00</td>
+</tr>
+
+</tfoot>
+
+</table>
+
+<p><a href="chrome-table-fix.zip">Download Source Code</a>  (36KB zip file)</p>
+
+</body>
+
+</html> 
+
